@@ -1,11 +1,13 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import '@material/web/button/filled-button.js';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  standalone: true,
+  imports: [RouterOutlet, CommonModule, NavbarComponent, HomeComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
