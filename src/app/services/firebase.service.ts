@@ -11,7 +11,7 @@ export class FirebaseService {
 
   constructor() {
     const firebaseConfig = {
-      apiKey: "AIzaSyAWXKCtB80hm9amdIRwHOt4qDAFZ2MCUTs",
+      apiKey: process.env['FIREBASE_API_KEY'],
       authDomain: "morganclarke-ca.firebaseapp.com",
       projectId: "morganclarke-ca",
       storageBucket: "morganclarke-ca.firebasestorage.app",
