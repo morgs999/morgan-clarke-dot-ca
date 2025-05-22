@@ -1,5 +1,7 @@
-<mat-card class="p-5 w-md">
-    <p>Back End Experience</p>
-    <mat-slide-toggle>Toggle me!</mat-slide-toggle>
-    <mat-icon svgIcon="firebase"></mat-icon>
-</mat-card>
+<!-- Icons From Google Fonts Icons https://fonts.google.com/icons -->
+<div class="main p-5">
+    <mat-card *ngFor="let icon of iconList" class="item-card m-2 p-2">
+        <div class="item-card-title">{{icon.name}}</div>
+        <img mat-card-image [src]="icon.path" class="w-xs p-5" />
+    </mat-card>
+</div>
