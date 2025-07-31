@@ -7,7 +7,12 @@ import { HomeComponent } from './home/home.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, NavbarComponent, HomeComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    NavbarComponent,
+    HomeComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
