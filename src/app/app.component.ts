@@ -10,8 +10,7 @@ import { HomeComponent } from './home/home.component';
   imports: [
     RouterOutlet,
     CommonModule,
-    NavbarComponent,
-    HomeComponent
+    NavbarComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
