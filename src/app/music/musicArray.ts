@@ -15,11 +15,6 @@ export const musicArray = [
         spotifyUrl: 'https://open.spotify.com/embed/album/72NZaCJQW4XTnbujSKUMBR?utm_source=generator'
     },
     {
-        artist: 'Ascension',
-        album: 'Ascension',
-        spotifyUrl: ''
-    },
-    {
         artist: 'Charles Warren Orchestra',
         album: 'Moonlanding EP',
         spotifyUrl: 'https://open.spotify.com/embed/album/01si7mk5xOjlYnhlbzAyNR?utm_source=generator'
@@ -43,5 +38,10 @@ export const musicArray = [
         artist: 'Lost Martian',
         album: 'Cosmic Humor',
         spotifyUrl: 'https://open.spotify.com/embed/album/1doahEDXdqvQpCWC0CDjcP?utm_source=generator'
-    }
+    },
+    {
+        artist: 'Ascension TD Christian',
+        album: 'Voice to Heaven',
+        spotifyUrl: 'https://open.spotify.com/embed/album/5M4lt6PJvmHQpdztuLg8A3?utm_source=generator'
+    },
 ]
