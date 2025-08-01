@@ -1,8 +1,12 @@
 @use "tailwindcss" as *;
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+
+
+.train-one-regular {
+  font-family: "Train One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
 html {
   @include mat.theme((color: (theme-type: light,
