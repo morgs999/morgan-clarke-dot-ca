@@ -1,11 +1,11 @@
 <!-- Icons From Google Fonts Icons https://fonts.google.com/icons -->
 <div class="main p-5">
-    <ng-container *ngFor="let icon of iconList">
-        <a [routerLink]="icon.url">
-            <mat-card class="item-card m-2 p-2">
-                <div class="item-card-title">{{icon.name}}</div>
-                <img mat-card-image [src]="icon.path" class="w-xs p-5" />
-            </mat-card>
-        </a>
-    </ng-container>
+  @for (icon of iconList; track icon) {
+    <a [routerLink]="icon.url">
+      <mat-card class="item-card m-2 p-2">
+        <div class="item-card-title">{{icon.name}}</div>
+        <img mat-card-image [src]="icon.path" class="w-xs p-5" />
+      </mat-card>
+    </a>
+  }
 </div>
