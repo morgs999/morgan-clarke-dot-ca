@@ -6,11 +6,10 @@ import { musicArray } from './musicArray';
 import { CarouselComponent } from '../components/carousel/carousel.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { AnimateOnScrollModule } from 'primeng/animateonscroll'
 
 @Component({
   selector: 'music',
-  imports: [CommonModule, CarouselComponent, MatCardModule, MatIconModule, AnimateOnScrollModule],
+  imports: [CommonModule, CarouselComponent, MatCardModule, MatIconModule],
   templateUrl: './music.component.html',
   styleUrl: './music.component.scss',
   schemas: []
