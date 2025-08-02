@@ -1,12 +1,5 @@
 export const musicArray = [
     {
-        artist: 'Falsies',
-        album: 'Magenta',
-        spotifyUrl: 'https://open.spotify.com/embed/album/7ng2RkZkm2EGoR6c5J4T5i?utm_source=generator',
-        production: 'Addl Recording, Mixing, Mastering',
-        genres: 'Rock, Indie',
-    },
-    {
         artist: 'Moodieboy',
         album: 'Better Get Better',
         spotifyUrl: 'https://open.spotify.com/embed/album/6PXRcBsNI5GOFzrNEoIyFb?utm_source=generator',
@@ -61,6 +54,13 @@ export const musicArray = [
         spotifyUrl: 'https://open.spotify.com/embed/album/5M4lt6PJvmHQpdztuLg8A3?utm_source=generator',
         production: 'Recording, Mixing, Mastering',
         genres: 'Christian, Rock',
+    },
+    {
+        artist: 'Falsies',
+        album: 'Magenta',
+        spotifyUrl: 'https://open.spotify.com/embed/album/7ng2RkZkm2EGoR6c5J4T5i?utm_source=generator',
+        production: 'Addl Recording, Mixing, Mastering',
+        genres: 'Rock, Indie',
     },
 
 ]

@@ -1,0 +1,26 @@
+<div class="carousel-container">
+
+    <div class="carousel-wrapper">
+        <!-- Slide -->
+        <div class="carousel-track">
+            <div *ngFor="let item of items; let i = index" class="carousel-slide" [ngClass]="activeClass(i)">
+                <ng-container *ngTemplateOutlet="slideTemplate; context: { $implicit: item, index: i }">
+                </ng-container>
+            </div>
+        </div>
+        <!-- Nav buttons -->
+        <button *ngIf="showNav" mat-fab (click)="previous()" class="nav-btn prev-btn" aria-label="Previous Slide">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button *ngIf="showNav" mat-fab (click)="next()" class="nav-btn next-btn" aria-label="Next Slide">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+        <!-- Dots -->
+        <div *ngIf="showDots" class="dots-container">
+            <button *ngFor="let item of items; let i = index" (click)="goToSlide(i)" class="dot"
+                [class.active]="i === currentIndex" [attr.aria-label]="'Go to slide' + (i+1)">
+            </button>
+        </div>
+        <!-- end of elements -->
+    </div>
+</div>

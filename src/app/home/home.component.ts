@@ -11,11 +11,11 @@ interface Icon {
 }
 
 const iconList: Icon[] = [
-  { name: 'Coding', path: './code.svg', url: '/codes' },
-  { name: 'Music', path: './music.svg', url: '/music' },
-  { name: 'Podcasts', path: './podcast.svg', url: '/podcasts' },
-  { name: 'My Blog', path: './blog.svg', url: 'blog' },
-  { name: 'Writing', path: './write.svg', url: 'writes' }
+  { name: 'Coding', path: '/assets/public/svgs/code.svg', url: '/codes' },
+  { name: 'Music', path: '/assets/public/svgs/music.svg', url: '/music' },
+  { name: 'Podcasts', path: '/assets/public/svgs/podcast.svg', url: '/podcasts' },
+  { name: 'My Blog', path: '/assets/public/svgs/blog.svg', url: 'blog' },
+  { name: 'Writing', path: '/assets/public/svgs/write.svg', url: 'writes' }
 ]
 
 @Component({

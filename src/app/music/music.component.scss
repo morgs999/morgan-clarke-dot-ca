@@ -1,0 +1,86 @@
+// music.component.scss
+:host {
+  --icon-size: 10em;
+}
+
+.music-container {
+  min-height: 100vh;
+  overflow: hidden; // Prevent any overflow
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.parallax-img {
+  // position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  // min-height: 200vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-position: center;
+}
+
+.title-card {
+  color: white;
+  position: absolute;
+  top: 8%;
+  // left: 12%;
+  text-shadow: 2px 2px 4px black;
+}
+
+.music-title {
+  font-family: "Train One";
+  font-size: var(--icon-size);
+}
+
+.music-icon {
+  font-size: var(--icon-size);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: white;
+  text-shadow: 20px 2px 4px rgb(0, 0, 0, 0.5);
+}
+
+.music-card {
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (max-width: 860px) {
+  :host {
+    --icon-size: 5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-img {
+    background-position: center;
+  }
+
+  .spotify-iframe {
+    height: 250px;
+  }
+}
+
+@media (max-width: 451px) {
+  :host {
+    --icon-size: 3em;
+  }
+
+  .parallax-img {
+    height: 65%;
+    min-height: 100vh;
+  }
+}
+
+// ANIMATIONS

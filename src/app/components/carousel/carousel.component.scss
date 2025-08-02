@@ -1,0 +1,326 @@
+// carousel.component.scss
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    height: 1000px;
+}
+
+.carousel-track {
+    position: relative;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+.carousel-slide {
+    position: absolute;
+    margin-top: 7em;
+    width: 90%;
+    max-width: 400px;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+
+    &.active {
+        z-index: 3;
+        opacity: 1;
+        transform: translateX(0) scale(1) rotateY(0deg);
+        animation: slideInActive 1s ease-out;
+    }
+
+    &.prev {
+        z-index: 2;
+        opacity: 0.7;
+        transform: translateX(-80%) scale(0.85) rotateY(25deg);
+        animation: slideInPrev 1s ease-out;
+    }
+
+    &.next {
+        z-index: 2;
+        opacity: 0.7;
+        transform: translateX(80%) scale(0.85) rotateY(-25deg);
+        animation: slideInNext 1s ease-out;
+    }
+
+    &.hidden {
+        z-index: 1;
+        opacity: 0;
+        transform: translateX(0) scale(0.7);
+        pointer-events: none;
+        animation: slideOut 1s ease-in
+    }
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8em;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: #999;
+        transform: scale(1.2);
+    }
+
+    &.active {
+        background: #2196F3;
+        transform: scale(1.3);
+    }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+    .carousel-track {
+        height: 500px;
+    }
+
+    .carousel-slide {
+        width: 95%;
+
+        &.prev,
+        &.next {
+            display: none;
+        }
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
+}
+
+// slide animation
+@keyframes slideInActive {
+    0% {
+        opacity: 0;
+        transform: translateX(0) scale(0.8) rotateY(180deg);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateX(0) scale(1.1) rotateY(90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1) rotateY(0deg);
+    }
+}
+
+@keyframes slideInPrev {
+    0% {
+        opacity: 0;
+        transform: translateX(-120%) scale(0.6) rotateY(45deg);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(-90%) scale(0.75) rotateY(35deg);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: translateX(-80%) scale(0.85) rotateY(25deg);
+    }
+}
+
+@keyframes slideInNext {
+    0% {
+        opacity: 0;
+        transform: translateX(120%) scale(0.6) rotateY(-45deg);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(90%) scale(0.75) rotateY(-35deg);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: translateX(80%) scale(0.85) rotateY(-25deg);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 0.7;
+        transform: translateX(0) scale(0.85) rotateY(25deg);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: translateX(0) scale(0.75) rotateY(45deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(0) scale(0.7) rotateY(90deg);
+    }
+}
+
+// Enhanced 3D flip animation for the active slide
+.carousel-slide.active .music-card {
+    animation: cardFlip 1s ease-out;
+}
+
+@keyframes cardFlip {
+    0% {
+        transform: rotateY(180deg) scale(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: rotateY(90deg) scale(1.05);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+// Add a subtle bounce effect
+.carousel-slide.active {
+    animation: slideInActive 1s ease-out, bounce 0.3s ease-out 0.8s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(0) scale(1) rotateY(0deg);
+    }
+
+    50% {
+        transform: translateX(0) scale(1.02) rotateY(0deg);
+    }
+}
+
+// Mobile animations (simpler for performance)
+@media (max-width: 768px) {
+    .carousel-slide {
+        transition: all 1s ease-in-out;
+
+        &.active {
+            animation: mobileSlideIn 1s ease-out;
+        }
+
+        &.hidden {
+            animation: mobileSlideOut 1s ease-in;
+        }
+    }
+
+    @keyframes mobileSlideIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.9) rotateY(45deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1) rotateY(0deg);
+        }
+    }
+
+    @keyframes mobileSlideOut {
+        0% {
+            opacity: 1;
+            transform: scale(1) rotateY(0deg);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(0.9) rotateY(-45deg);
+        }
+    }
+
+    // Disable card flip on mobile for performance
+    .carousel-slide.active .music-card {
+        animation: none;
+    }
+}
+
+// Optional: Add a subtle glow effect during animation
+.carousel-slide.active {
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: linear-gradient(45deg, rgba(33, 150, 243, 0.1), rgba(33, 150, 243, 0.05));
+        border-radius: 20px;
+        z-index: -1;
+        opacity: 0;
+        animation: glow 1s ease-out;
+    }
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
