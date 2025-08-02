@@ -12,16 +12,19 @@
   width: 100%;
   height: 100vh;
   position: relative;
+
+  &.first-child {
+    height: 200vh;
+  }
 }
 
 .parallax-img {
-  // position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0.8;
-  // min-height: 200vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,13 +35,28 @@
   color: white;
   position: absolute;
   top: 8%;
-  // left: 12%;
-  text-shadow: 2px 2px 4px black;
+  z-index: 10;
+
+  &.animate-in {
+    .music-title {
+      animation: textDropIn 0.5s ease-out forwards;
+    }
+
+    .music-icon {
+      animation: textDropIn 0.75s ease-out forwards;
+    }
+  }
 }
 
 .music-title {
   font-family: "Train One";
   font-size: var(--icon-size);
+
+  &.second-child {
+    // initial state before animation
+    transform: translateY(-50px);
+    opacity: 0;
+  }
 }
 
 .music-icon {
@@ -46,7 +64,19 @@
   width: var(--icon-size);
   height: var(--icon-size);
   color: white;
-  text-shadow: 20px 2px 4px rgb(0, 0, 0, 0.5);
+  text-shadow: 20px 2px 4px rgba(0, 0, 0, 0.5);
+
+  &.second-child {
+    // initial state before animation
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 35%;
+  width: 100%;
 }
 
 .music-card {
@@ -54,25 +84,37 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   overflow: hidden;
+  z-index: 9;
 }
 
+// ipad
 @media (max-width: 860px) {
   :host {
     --icon-size: 5em;
   }
-}
 
-@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+
+    &.first-child {
+      height: 100vh;
+    }
+  }
+
   .parallax-img {
     background-position: center;
   }
+}
 
+// some phones
+@media (max-width: 768px) {
   .spotify-iframe {
     height: 250px;
   }
 }
 
-@media (max-width: 451px) {
+// old ass phones
+@media (max-width: 450px) {
   :host {
     --icon-size: 3em;
   }
@@ -84,3 +126,19 @@
 }
 
 // ANIMATIONS
+@keyframes textDropIn {
+  0% {
+    transform: translateY(-50px) scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(25px) scale(0.75);
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
