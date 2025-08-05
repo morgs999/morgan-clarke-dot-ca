@@ -1,60 +1,95 @@
-<div class="music-container">
-    <!-- First parallax image // My Work Section -->
-    <div class="hero first-child">
-        <div class="parallax-img" [ngStyle]="{'background-image': 'url(' + consoleImage + ')'}">
-        </div>
-
-        <div class="title-card" #titleCard style="text-align: right; right: 8%;">
-            <h1 class="music-title">My Work</h1>
-            <mat-icon class="music-icon">south</mat-icon>
-        </div>
-        <div class="carousel-overlay">
-            <carousel [items]="musicArray" [showDots]="true" [showNav]="true" [showSideSlides]="true"
-                (slideChange)="onSlideChange($event)">
-                <ng-template #slideTemplate let-music let-index="index">
-                    <mat-card class="music-card ">
-                        <mat-card-header>
-                            <mat-card-title style="font-family: Train One; font-size: 32px; padding: 8px 0;">
-                                {{music.album}}
-                            </mat-card-title>
-                            <mat-card-subtitle style="font-family: Train One; font-size: 24px; padding: 8px 0;">
-                                {{music.artist}}
-                            </mat-card-subtitle>
-                        </mat-card-header>
-                        <!-- <img mat-card-image> -->
-                        <mat-card-content>
-                            <iframe [src]="getSafeUrl(music.spotifyUrl)" [title]="music.artist+' - '+music.album"
-                                class="item-card py-3 spotify-iframe" data-testid="embed-iframe"
-                                style="border-radius:12px" width="100%" height="500px" frameBorder="0"
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                loading="lazy"></iframe>
-                            <h4 class="text-2xl py-2">My Work: {{music.production}}</h4>
-                            <h5 class="text-xl">For Fans of: {{music.genres}}</h5>
-                        </mat-card-content>
-                    </mat-card>
-                </ng-template>
-            </carousel>
-        </div>
+<!-- First parallax image // My Work Section -->
+<div class="hero" style="height: 140vh;">
+    <!-- background image -->
+    <div class="parallax-img" [ngStyle]="{'background-image': 'url(' + consoleImage + ')'}" style="height: 140vh;">
     </div>
-
-    <!-- Second parallax image // My Studio section -->
-    <div class="hero" style="height: 100vh">
-        <div class="parallax-img" [ngStyle]="{'background-image': 'url(' + drumsImage + ')'}">
-        </div>
-        <div class="title-card" #titleCard style="left: 12%;">
-            <h1 class="music-title second-child">My Studio</h1>
-            <mat-icon class="music-icon second-child">east</mat-icon>
-        </div>
-
+    <div class="grid grid-cols-12 gap-4">
+        <!-- text -->
+        <h1 class="music-title col-span-9" style="margin-left: 50px;">My Work</h1>
+        <!-- arrow -->
+        <mat-icon class="music-icon col-span-1 col-end-12" style="transform: rotate(45deg);">south</mat-icon>
     </div>
+    <!-- carousel -->
+    <carousel class="col-span-3" [items]="musicArray" [showDots]="true" [showNav]="true" [showSideSlides]="true"
+        (slideChange)="onSlideChange($event)">
+        <ng-template #slideTemplate let-music let-index="index">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title style="font-family: Train One">
+                        {{music.album}}
+                    </mat-card-title>
+                    <mat-card-subtitle style="font-family: Train One">
+                        {{music.artist}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content style="height: 500px; width: 100%;">
+                    <!-- <iframe [src]="getSafeUrl(music.spotifyUrl)" [title]="music.artist+' - '+music.album"
+                            class="item-card py-3 spotify-iframe" data-testid="embed-iframe" style="border-radius:12px"
+                            width="100%" height="500px" frameBorder="0"
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                        </iframe> -->
+                    <h4 class="">My Work: {{music.production}}</h4>
+                    <h5 class="">For Fans of: {{music.genres}}</h5>
+                </mat-card-content>
+            </mat-card>
+        </ng-template>
+    </carousel>
+</div>
 
-    <!-- Third parallax image // My band section -->
-    <div class="hero" style="height: 100vh">
-        <div class="parallax-img" [ngStyle]="{'background-image': 'url(' + moodieboyImage + ')'}">
-        </div>
-        <div class="title-card" #titleCard style="text-align: right; right: 12%;">
-            <h1 class="music-title second-child">My Band</h1>
-            <mat-icon class="music-icon second-child">west</mat-icon>
-        </div>
+
+<!-- Second parallax image // My Studio section -->
+<div class="hero">
+    <!-- background image -->
+    <div class="parallax-img" [ngStyle]="{'background-image': 'url(' + drumsImage + ')'}"></div>
+    <div class="grid grid-cols-12 gap-4 flex justify-center" style="">
+        <!-- arrow -->
+        <mat-icon class="music-icon col-span-1" style="transform: rotate(-45deg);">south</mat-icon>
+        <!-- text -->
+        <h1 class="music-title col-span-9 col-end-12" style="text-align: right; font-size: 9em;">My Studio</h1>
+    </div>
+    <div class="grid grid-cols-6 md:grid-cols-12">
+        <!-- orbstudioscard 1 -->
+        <mat-card class="col-span-5 md:col-span-6 m-2 p-2" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>Orb Studios</mat-card-title>
+                <mat-card-subtitle>Studio A</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://orbstudios.ca/public/fromdoor.JPG">
+            <mat-card-content>
+                <p>Yo</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button matButton>LIKE</button>
+            </mat-card-actions>
+        </mat-card>
+
+        <!-- orbstudioscard2 -->
+        <mat-card class="col-span-5 md:col-span-6 m-2 p-2" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>Orb Studios</mat-card-title>
+                <mat-card-subtitle>Control Room</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://orbstudios.ca/public/controlroomright.png">
+            <mat-card-content>
+                <p>Yo2</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button matButton>LIKE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<!-- Third parallax image // My band section -->
+<div class="hero">
+    <!-- background image -->
+    <div class="parallax-img" [ngStyle]="{'background-image': 'url(' + moodieboyImage + ')'}"></div>
+    <div class="grid grid-cols-12 gap-4">
+
+        <!-- text -->
+        <h1 class="music-title col-span-9" style="margin-left: 50px;">My Band</h1>
+        <!-- arrow -->
+        <mat-icon class="music-icon col-span-1 col-end-12" style="transform: rotate(45deg)">south</mat-icon>
     </div>
 </div>

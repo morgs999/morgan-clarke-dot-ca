@@ -1,104 +1,38 @@
 // music.component.scss
-:host {
-  --icon-size: 10em;
-}
-
-.music-container {
-  min-height: 100vh;
-  overflow: hidden; // Prevent any overflow
-}
-
 .hero {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-
-  &.first-child {
-    height: 200vh;
-  }
+  // height: 100%;
+  min-height: 100vh;
 }
 
 .parallax-img {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  opacity: 0.8;
+  // height: 100%;
+  min-height: 100vh;
+  opacity: 0.4;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-position: center;
-}
-
-.title-card {
-  color: white;
-  position: absolute;
-  top: 8%;
-  z-index: 10;
-
-  &.animate-in {
-    .music-title {
-      animation: textDropIn 0.5s ease-out forwards;
-    }
-
-    .music-icon {
-      animation: textDropIn 0.75s ease-out forwards;
-    }
-  }
+  // z-index: 0;
 }
 
 .music-title {
   font-family: "Train One";
-  font-size: var(--icon-size);
-
-  &.second-child {
-    // initial state before animation
-    transform: translateY(-50px);
-    opacity: 0;
-  }
+  font-size: 10em;
+  color: rgb(249, 235, 228);
+  position: relative;
 }
 
 .music-icon {
-  font-size: var(--icon-size);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  color: white;
+  overflow: visible;
+  font-size: 13em;
   text-shadow: 20px 2px 4px rgba(0, 0, 0, 0.5);
-
-  &.second-child {
-    // initial state before animation
-    transform: translateY(-50px);
-    opacity: 0;
-  }
+  color: white;
 }
 
-.carousel-overlay {
-  position: absolute;
-  top: 35%;
-  width: 100%;
-}
-
-.music-card {
-  height: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border-radius: 16px;
-  overflow: hidden;
-  z-index: 9;
-}
-
-// ipad
-@media (max-width: 860px) {
-  :host {
-    --icon-size: 5em;
-  }
-
-  .hero {
-    height: 100vh;
-
-    &.first-child {
-      height: 100vh;
-    }
+@media (max-width: 1024px) {
+  .music-title, .music-icon  {
+    font-size: 5em !important;
   }
 
   .parallax-img {
@@ -106,39 +40,8 @@
   }
 }
 
-// some phones
-@media (max-width: 768px) {
-  .spotify-iframe {
-    height: 250px;
-  }
-}
-
-// old ass phones
-@media (max-width: 450px) {
-  :host {
-    --icon-size: 3em;
-  }
-
-  .parallax-img {
-    height: 65%;
-    min-height: 100vh;
-  }
-}
-
-// ANIMATIONS
-@keyframes textDropIn {
-  0% {
-    transform: translateY(-50px) scale(0.5);
-    opacity: 0;
-  }
-
-  50% {
-    transform: translateY(25px) scale(0.75);
-    opacity: 0.75;
-  }
-
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
+@media (max-width: 560px) {
+  .music-title, .music-icon {
+    font-size: 3.5em !important;
   }
 }
