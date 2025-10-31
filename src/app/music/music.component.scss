@@ -31,7 +31,9 @@
 }
 
 @media (max-width: 1024px) {
-  .music-title, .music-icon  {
+
+  .music-title,
+  .music-icon {
     font-size: 5em !important;
   }
 
@@ -41,7 +43,9 @@
 }
 
 @media (max-width: 560px) {
-  .music-title, .music-icon {
+
+  .music-title,
+  .music-icon {
     font-size: 3.5em !important;
   }
 }
