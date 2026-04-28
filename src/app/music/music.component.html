@@ -9,8 +9,32 @@
         <!-- arrow -->
         <mat-icon class="music-icon col-span-1 col-end-12" style="transform: rotate(45deg);">south</mat-icon>
     </div>
+    <div class="filter-buttons p-5">
+        <div class="genre-filters mb-4">
+            <h3>Filter by Genre:</h3>
+            @for (genre of allGenres; track genre) {
+                <button
+                [class.active]="selectedGenre === genre"
+                (click)="filterMusic('genre', genre)"
+                class="filter-btn mr-2 mb-2">
+                {{ genre }}
+                </button>
+            }
+        </div>
+        <div class="role-filters mb-4">
+            <h3>Filter by Production Role:</h3>
+            @for (role of allRoles; track role) {
+                <button
+                [class.active]="selectedRole === role"
+                (click)="filterMusic('role', role)"
+                class="filter-btn mr-2 mb-2">
+            {{ role }}
+            </button>
+            }
+        </div>
+    </div>
     <!-- carousel -->
-    <carousel class="col-span-3" [items]="musicArray" [showDots]="true" [showNav]="true" [showSideSlides]="true"
+    <carousel class="col-span-3" [items]="(filteredMusic$ | async) || []" [showDots]="true" [showNav]="true" [showSideSlides]="true"
         (slideChange)="onSlideChange($event)">
         <ng-template #slideTemplate let-music let-index="index">
             <mat-card>
@@ -29,8 +53,9 @@
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy">
                         </iframe> -->
-                    <h4 class="">My Work: {{music.production}}</h4>
-                    <h5 class="">For Fans of: {{music.genres}}</h5>
+                    <h4 class="">My Work: {{music.production.join(', ')}}</h4>
+                    <span class="badge">{{ music.getTotalProductionRoles?.() }} Roles</span>
+                    <h5 class="">For Fans of: {{music.genres.join(' • ')}}</h5>
                 </mat-card-content>
             </mat-card>
         </ng-template>
