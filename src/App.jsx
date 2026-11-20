@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Podcasts from './sections/podcasts.jsx'
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 function App() {
 

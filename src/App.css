@@ -1,20 +1,8 @@
 body {
     margin: auto;
     background-image: url('assets/slatebackground.jpg');
-    background-size: cover;
     background-repeat: repeat-y;
 }
-
-/* .montserrat {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-.bebas {
-    font-family: "Bebas Neue", sans-serif;
-    font-style: normal;
-} */
 
 h1,
 h2,

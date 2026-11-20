@@ -1,7 +1,7 @@
 export default function HeroHeader ({title}) {
 
     const heroHeaderStyles = {
-        letterSpacing: '-9.5px',
+        letterSpacing: '-10px',
         color: 'white',
         marginLeft: '10%',
         fontSize: '15rem',
