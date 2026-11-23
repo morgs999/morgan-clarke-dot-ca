@@ -8,55 +8,83 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export default function Podcasts() {
+
+    const podcasts = [
+        {
+            "img": '/scathingcover.png',
+            "title": 'Scathing Atheist',
+            "text": 'A Scathing look at religions',
+            "link": 'scathingatheist.com',
+            "stats": {
+                "listeners": 100666,
+                "episodes": "Over 700 "
+            }
+        },
+        {
+            "img": '/gamcover.jpeg',
+            "title": 'God Awful Movies',
+            "text": "Making fun of God's movies",
+            "link": 'godawfulmovieslive.com',
+            "stats": {
+                // "listeners": 666100,
+                "episodes": "Over 500 "
+            }
+        },
+        {
+            "img": '/skepcover.jpg',
+            "title": 'Skepticrat',
+            "text": 'Politics and Religion',
+            // "link": 'patreon.com/skepticrat',
+            "stats": {
+                "listeners": 8645,
+                "episodes": "Over 250 "
+            }
+        }
+    ]
     
 
     return(
         <>
             <HeroHeader title="Podcasts"/>
             <Header title="Puzzle In A Thunderstorm" subtitle="Audio Engineer, Video Editor"/>
-            <Container style={{
-                // marginLeft: '10%'
-                }}>
-                <Row>
-                    <Col>
+            <Container className="" style={{}}>
+
+                <Row sm={1} md={2} lg={3} className="my-3 g-5">
+                    {podcasts.map((podcast) => (
+                    <Col key={podcast.title}>
                         <SquareCard
-                            img="/hero.jpg"
-                            title="Scathing Atheist"
-                            text="a scathing look at religions"
-                            link="hear me"
-                        />
+                            img={podcast.img}
+                            title={podcast.title}
+                            text={podcast.text}
+                            link={podcast.link}
+                            stats={podcast.stats}
+                            />
                     </Col>
+                ))}
+                </Row>
+
+                <Row className="my-3 g-5">
                     <Col>
-                        <SquareCard
+                        <WideCard
+                            className=""
                             img="/hero.jpg"
-                            title="Scathing Atheist"
-                            text="a scathing look at religions"
-                            link="hear me"
-                        />
-                    </Col>
-                    <Col>
-                        <SquareCard
-                            img="/hero.jpg"
-                            title="Scathing Atheist"
-                            text="a scathing look at religions"
-                            link="hear me"
+                            title="Live Show Experience"
+                            text="Did some crazy stuff at live shows that I don't want to talk about"
+                            link="www.morganclarke.ca"
                         />
                     </Col>
                 </Row>
-                <Row>
-                    <WideCard
-                        className="w-50"
-                        img="/hero.jpg"
-                        title=""
-                        text=""
-                        link=""
-                    />
-                </Row>
-                <Row>
-                    <SideCard
-                        className="w-50"
-                        img="/hero.jpg"
-                    />
+
+                <Row className="my-3 g-5">
+                    <Col>
+                        <SideCard
+                            className=""
+                            img="/dndcover.jpg"
+                            title="DnD Minus"
+                            text="Dungeons & Dragons but with dick jokes.  Not dragon dick jokes per se..."
+                            link="patreon.com/dndminus"
+                        />
+                    </Col>
                 </Row>
                 
             </Container>

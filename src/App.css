@@ -1,17 +1,38 @@
+:root {
+    --white: #fffeee;
+    --red: #cc362b;
+    --slate: #424242;
+    --dark: #171717;
+}
+
 body {
     margin: auto;
-    background-image: url('assets/slatebackground.jpg');
+    /* background-image: url('assets/slatebackground.jpg'); */
+    background-color: var(--red);
     background-repeat: repeat-y;
+}
+
+hr {
+    background-color: var(--slate);
+    border: none;
+    height: 10px;
+    opacity: 100%;
 }
 
 h1,
 h2,
 h4 {
     font-family: "Bebas Neue", sans-serif;
+    text-shadow: 2px 2px 4px var(--slate);
 }
 
 h3,
 h5,
-p {
+h6 {
     font-family: "Montserrat", sans-serif;
+    text-shadow: 2px 2px 4px var(--white);
+}
+
+a {
+    color: var(--white);
 }

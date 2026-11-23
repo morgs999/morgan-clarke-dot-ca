@@ -2,20 +2,43 @@ import { Button, Card } from 'react-bootstrap'
 
 export default function WideCard({img, title, text, link}) {
 
-    const cardStyles = {
-        
-    }
-
     return(
         <>
-            <Card className="w-75 p-5">
-                <Card.Img style={{maxHeight: '25vh', objectFit: 'cover'}}src={img}></Card.Img>
-                    <Card.Title>
-                        <h5>Live Shows</h5>
+            <Card 
+                className="rounded-0 border-0 shadow-lg" 
+                style={{
+                    color: 'white',
+                    backgroundColor: 'var(--dark)'
+                }}>
+
+                <Card.Img
+                    className="rounded-0"
+                    style={{
+                        maxHeight: '45vh',
+                        objectFit: 'cover'
+                    }}
+                    src={img}/>
+                <Card.Body 
+                    className=""
+                    style={{
+                        borderBottom: '5px solid var(--white)',
+                        borderLeft: '5px solid var(--white)',
+                        margin: '20px',
+                        
+                    }}>
+                    <Card.Title style={{letterSpacing: '7.5px'}}>
+                        <h2>{title}</h2>
                     </Card.Title>
+
                     <Card.Text>
-                        <p>Did some stuff at live shows</p>
+                        {text}
                     </Card.Text>
+
+                    <Card.Link href={`https://${link}`} target="_blank">
+                        {link}
+                    </Card.Link>
+                </Card.Body>
+
             </Card>
         </>
     )

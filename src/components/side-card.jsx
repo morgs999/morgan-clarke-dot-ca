@@ -2,26 +2,50 @@ import { Button, Card, Row, Col } from 'react-bootstrap'
 
 export default function SideCard({img, title, text, link}) {
 
-    const cardStyles = {
-        
-    }
-
     return(
         <>
-            <Card className="w-75 p-5">
-                <Row className="g-5">
-                    <Col>
-                        <Card.Img style={{maxHeight: '25vh', objectFit: 'cover'}}src={img}></Card.Img>
+            <Card 
+                className="rounded-0 border-0 shadow-lg"
+                style={{
+                    color: 'white',
+                    backgroundColor: 'var(--dark)'
+                }}>
+
+                <Row className="">
+
+                    <Col md lg="4">
+                        <Card.Img 
+                            className="rounded-0"
+                            style={{
+                                maxHeight: '45vh', 
+                                objectFit: 'contain'
+                            }}
+                            src={img}/>
                     </Col>
-                    <Col>
-                        <Card.Title>
-                            <h5>Live Shows</h5>
-                        </Card.Title>
-                        <Card.Text>
-                            <p>Did some stuff at live shows</p>
-                        </Card.Text>
+
+                    <Col lg="8">
+                        <Card.Body
+                            className=""
+                            style={{
+                                borderRight: '5px solid var(--white)',
+                                borderTop: '5px solid var(--white)',
+                                margin: '20px'
+                            }}
+                        >
+                            <Card.Title style={{letterSpacing: '7.5px'}}>
+                                <h4>{title}</h4>
+                            </Card.Title>
+                            <Card.Text>
+                                {text}
+                            </Card.Text>
+                            <Card.Link href={`https://${link}`} target="_blank">
+                                {link}
+                            </Card.Link>
+                        </Card.Body>
                     </Col>
+
                 </Row>
+
             </Card>
         </>
     )

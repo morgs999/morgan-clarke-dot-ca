@@ -9,9 +9,9 @@ export default function Header({title, subtitle}) {
 
     return(
         <>
-        <div style={headerStyles}>
+        <div className="shadow-lg p-3" style={headerStyles}>
         <h2 style={{
-            fontSize: '10rem',
+            fontSize: '7rem',
             marginBottom: '-0.5rem',
         }}
         >{title}</h2>
