@@ -45,6 +45,7 @@ export default function Podcasts() {
 
     return(
         <>
+        <div id="podcasts" style={{backgroundColor: 'var(--slate)'}}>
             <HeroHeader title="Podcasts"/>
             <Header title="Puzzle In A Thunderstorm" subtitle="Audio Engineer, Video Editor"/>
             <Container className="" style={{}}>
@@ -88,6 +89,7 @@ export default function Podcasts() {
                 </Row>
                 
             </Container>
+        </div>
         </>
     )
 }

@@ -1,15 +1,18 @@
 :root {
     --white: #fffeee;
     --red: #cc362b;
+    --gold: #fca503;
     --slate: #424242;
     --dark: #171717;
+    --navbar: 10%;
 }
 
 body {
     margin: auto;
     /* background-image: url('assets/slatebackground.jpg'); */
-    background-color: var(--red);
-    background-repeat: repeat-y;
+    /* background-repeat: repeat-y; */
+    /* background-color: var(--red); */
+    padding-top: var(--navbar);
 }
 
 hr {
@@ -35,4 +38,10 @@ h6 {
 
 a {
     color: var(--white);
+}
+
+@media (max-width: 767.98px) {
+    body {
+        padding-bottom: var(--navbar);
+    }
 }
