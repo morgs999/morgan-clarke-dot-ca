@@ -11,16 +11,16 @@ export default function Software() {
 
     const software = [
         {
-            "img": '',
-            "title": '',
-            "text": '',
-            "link": '',
+            "img": 'null',
+            "title": 'a',
+            "text": 'c',
+            "link": 'e',
         },
         {
-            "img": '',
-            "title": '',
-            "text": '',
-            "link": '',
+            "img": 'null',
+            "title": 'b',
+            "text": 'd',
+            "link": 'f',
         },
     ];
 

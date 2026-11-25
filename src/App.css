@@ -40,6 +40,10 @@ a {
     color: var(--white);
 }
 
+.carousel-arrow {
+    
+}
+
 @media (max-width: 767.98px) {
     body {
         padding-bottom: var(--navbar);
