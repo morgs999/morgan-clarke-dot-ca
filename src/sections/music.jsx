@@ -27,6 +27,7 @@ export default function Music() {
             
             <HeroHeader 
                 title="Original Music"
+                style={{color: 'var(--dark)'}}
             />
 
             <Container>

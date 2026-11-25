@@ -26,8 +26,8 @@ export default function Software() {
 
     return(
         <>
-        <div id="software" style={{backgroundColor: 'var(--gold)'}}>
-            <HeroHeader title="Software"/>
+        <div id="software" className="" style={{backgroundColor: 'var(--slate)'}}>
+            <HeroHeader title="Software" color="var(--white)"/>
             <Header title="Komo Dev" subtitle="Software Engineer, Founder"/>
 
             <Container className="" style={{}}>

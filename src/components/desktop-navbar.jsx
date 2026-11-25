@@ -6,8 +6,8 @@ export default function DesktopNavbar() {
     const desktopStyles = {
             fontFamily: 'Bebas Neue',
             fontSize: '4rem',
-            marginBottom: '800px',
-            position: 'fixed',
+            // marginBottom: '800px',
+            position: 'sticky',
             top: '0',
             left: '0',
             right: '0',
@@ -28,8 +28,11 @@ export default function DesktopNavbar() {
                 <Navbar.Brand >MorganClarke.Ca</Navbar.Brand>
                 <Nav className="me-auto text-end">
                     <Nav.Link href="#podcasts">Podcasts</Nav.Link>
+                    <div style={{color: 'var(--white)'}}>|</div>
                     <Nav.Link href="#software">Software</Nav.Link>
+                    <div style={{color: 'var(--white)'}}>|</div>
                     <Nav.Link href="#orbstudios">Orb Studios</Nav.Link>
+                    <div style={{color: 'var(--white)'}}>|</div>
                     <Nav.Link href="#originalmusic">Original Music</Nav.Link>
                 </Nav>
             </Container>

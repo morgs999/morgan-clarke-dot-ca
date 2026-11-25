@@ -56,7 +56,7 @@ export default function ControlledCarousel() {
             >
             
             {musics.map((music) => (
-                <Carousel.Item className="px-5 pb-5">
+                <Carousel.Item key={music.id} className="px-5 pb-5">
 
                     <Spotify id={music.id} className=""/>
 

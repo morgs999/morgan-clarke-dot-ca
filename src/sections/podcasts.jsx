@@ -45,8 +45,8 @@ export default function Podcasts() {
 
     return(
         <>
-        <div id="podcasts" style={{backgroundColor: 'var(--slate)'}}>
-            <HeroHeader title="Podcasts"/>
+        <div id="podcasts" style={{backgroundColor: 'var(--gold)'}}>
+            <HeroHeader title="Podcasts" color="var(--white)"/>
             <Header title="Puzzle In A Thunderstorm" subtitle="Audio Engineer, Video Editor"/>
             <Container className="" style={{}}>
 
